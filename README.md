@@ -14,6 +14,8 @@ The contents are primary samples and other materials to be used in the workshop.
 
 **9:00 - 9:30**  Brief Introduction to R and R Studio
 
+  * Introductions 
+
   * History of R
   
   * Literate Programming and Open Science
