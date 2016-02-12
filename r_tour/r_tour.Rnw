@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\title{Quick Tour of R and R Studio}
+\date{February 12, 2106}
+\author{Robert Olendorf}
+
+\begin{document}
+  \maketitle
+  
+  \pagenumbering{gobble}
+  \newpage
+  
+  \section{R Studio}
+  
+  R Studio is an Integrated Development Environment (IDE) for the R Statistical Package. You can run R 
+  fine from the command line and using text editors such as Notepad++ or Textmate, but it provides a 
+  nice comprehensive view of your current project. It's also probably easier for beginners to learn on.
+  
+  When you Open 
+  
+  \section{R Basics}
+  
+  \pagenumbering{arabic}
+
+
+\end{document}
