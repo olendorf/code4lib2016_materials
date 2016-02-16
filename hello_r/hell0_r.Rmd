@@ -1,0 +1,95 @@
+---
+title: "Hello R"
+author: "Robert Olendorf"
+date: "February 16, 2016"
+output: html_document
+---
+
+## Hello R
+
+Type ```1 + 1``` into the console and hit return. You should see the answer. 
+
+
+```{r}
+# This is a comment, and as simple as it gets.
+1 + 1
+```
+
+Setting a variable. Notice I enter the **_a_** again to print it. Otherwise it would only display the assignment without a result. R is dynamically typed, so it makes an assumption about what you want.
+
+```{r}
+  # An integer
+  a <- 1
+  a
+  
+  # A float
+  a <- 1.1
+  a
+  
+  # A character
+  a <- "b"
+  a
+  
+  # If I want to have the character one, I have to quote it.
+  a <- "1"
+  a
+  # Im using a built in function here.
+  is.numeric(a)
+  
+  # Logical
+  a <- TRUE
+  a
+  
+```
+
+Identifiers consist of a sequence of letters, digits, the period (‘.’) and the underscore. They must not start with a digit or an underscore, or with a period followed by a digit. Periods are more often used than underscores in R. They don't have a special meaning, but are often used to unofficially namespace things 
+
+```{r}
+  # This works
+  ab1.my.things = 3
+  ab1.my.things
+  
+  # This doesn't
+  "1.my.things = 4"
+```
+
+## Data Structures
+
+R has a few data structures too. 
+
+### Vectors
+
+Vectors are essentially an array. They all have to be the same data type.
+
+```{r}
+  a <- c(1,2,3,4)  # numeric vector
+  a 
+  
+  b <- c("one", "2", "three") # character vector
+  b
+  
+  b.1 <- c(1, "2", 3) # R forces this to all characters
+  b.1
+  
+  c <- c(TRUE, FALSE, TRUE, FALSE) #logical vector
+  c
+```
+
+You can also create vectors quickly using the following syntaxes.
+
+```{r}
+  a <- 0:5
+  a
+  
+  b <- seq(0, 5, 0.5)
+  b
+```
+
+### Matrices
+
+
+
+
+
+
+
