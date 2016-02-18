@@ -76,27 +76,27 @@ img {
 <pre><code>## [1] 2</code></pre>
 <p>Setting a variable. Notice I enter the <strong><em>a</em></strong> again to print it. Otherwise it would only display the assignment without a result. R is dynamically typed, so it makes an assumption about what you want.</p>
 <pre class="r"><code>  # An integer
-  a &lt;- 1
-  a</code></pre>
+  a.int &lt;- 1
+  a.int</code></pre>
 <pre><code>## [1] 1</code></pre>
 <pre class="r"><code>  # A float
-  a &lt;- 1.1
-  a</code></pre>
+  a.float &lt;- 1.1
+  a.float</code></pre>
 <pre><code>## [1] 1.1</code></pre>
 <pre class="r"><code>  # A character
-  a &lt;- &quot;b&quot;
-  a</code></pre>
+  a.char &lt;- &quot;b&quot;
+  a.char</code></pre>
 <pre><code>## [1] &quot;b&quot;</code></pre>
 <pre class="r"><code>  # If I want to have the character one, I have to quote it.
-  a &lt;- &quot;1&quot;
-  a</code></pre>
+  a.char.2 &lt;- &quot;1&quot;
+  a.char.2</code></pre>
 <pre><code>## [1] &quot;1&quot;</code></pre>
 <pre class="r"><code>  # Im using a built in function here.
-  is.numeric(a)</code></pre>
+  is.numeric(a.char.2)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>  # Logical
-  a &lt;- TRUE
-  a</code></pre>
+  a.logical &lt;- TRUE
+  a.logical</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <p>Identifiers consist of a sequence of letters, digits, the period (‘.’) and the underscore. They must not start with a digit or an underscore, or with a period followed by a digit. Periods are more often used than underscores in R. They don’t have a special meaning, but are often used to unofficially namespace things</p>
 <pre class="r"><code>  # This works
@@ -113,28 +113,182 @@ img {
 <div id="vectors" class="section level3">
 <h3>Vectors</h3>
 <p>Vectors are essentially an array. They all have to be the same data type.</p>
-<pre class="r"><code>  a &lt;- c(1,2,3,4)  # numeric vector
-  a </code></pre>
+<pre class="r"><code>  vect.1 &lt;- c(1,2,3,4)  # numeric vector
+  vect.1</code></pre>
 <pre><code>## [1] 1 2 3 4</code></pre>
-<pre class="r"><code>  b &lt;- c(&quot;one&quot;, &quot;2&quot;, &quot;three&quot;) # character vector
-  b</code></pre>
+<pre class="r"><code>  vect.2 &lt;- c(&quot;one&quot;, &quot;2&quot;, &quot;three&quot;) # character vector
+  vect.2</code></pre>
 <pre><code>## [1] &quot;one&quot;   &quot;2&quot;     &quot;three&quot;</code></pre>
-<pre class="r"><code>  b.1 &lt;- c(1, &quot;2&quot;, 3) # R forces this to all characters
-  b.1</code></pre>
+<pre class="r"><code>  vect.3 &lt;- c(1, &quot;2&quot;, 3) # R forces this to all characters
+  vect.3</code></pre>
 <pre><code>## [1] &quot;1&quot; &quot;2&quot; &quot;3&quot;</code></pre>
-<pre class="r"><code>  c &lt;- c(TRUE, FALSE, TRUE, FALSE) #logical vector
-  c</code></pre>
+<pre class="r"><code>  vect.4 &lt;- c(TRUE, FALSE, TRUE, FALSE) #logical vector
+  vect.4</code></pre>
 <pre><code>## [1]  TRUE FALSE  TRUE FALSE</code></pre>
 <p>You can also create vectors quickly using the following syntaxes.</p>
-<pre class="r"><code>  a &lt;- 0:5
-  a</code></pre>
+<pre class="r"><code>  vect.5 &lt;- 0:5
+  vect.5</code></pre>
 <pre><code>## [1] 0 1 2 3 4 5</code></pre>
-<pre class="r"><code>  b &lt;- seq(0, 5, 0.5)
-  b</code></pre>
+<pre class="r"><code>  vect.6 &lt;- seq(0, 5, 0.5)
+  vect.6</code></pre>
 <pre><code>##  [1] 0.0 0.5 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0</code></pre>
+<p>Access parts of an array like this.</p>
+<pre class="r"><code>  vect.5[1]  # Notice that unlike many programming languages indexs in R start with one</code></pre>
+<pre><code>## [1] 0</code></pre>
+<pre class="r"><code>  vect.5[0]  # Returns somethign funny</code></pre>
+<pre><code>## integer(0)</code></pre>
+<pre class="r"><code>  vect.5[c(1, 4)] # Returns the first and fourth elements</code></pre>
+<pre><code>## [1] 0 3</code></pre>
+<pre class="r"><code>  vect.5[2:4]  # Returns second through fourth elements (slice)</code></pre>
+<pre><code>## [1] 1 2 3</code></pre>
+<pre class="r"><code>  ## You can also do some cool things like this.
+  vect.bool = c(TRUE, FALSE, FALSE, TRUE, FALSE, TRUE)
+  vect.5[vect.bool]</code></pre>
+<pre><code>## [1] 0 3 5</code></pre>
 </div>
 <div id="matrices" class="section level3">
 <h3>Matrices</h3>
+<p>Matrices are really are always 2 dimensional. They work similar to vectors but have some interesting properties and gotchas.</p>
+<pre class="r"><code>  #  Generate a matrix.
+  matrx.1 &lt;- matrix(1:20, nrow=5, ncol=4)
+  matrx.1</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    6   11   16
+## [2,]    2    7   12   17
+## [3,]    3    8   13   18
+## [4,]    4    9   14   19
+## [5,]    5   10   15   20</code></pre>
+<pre class="r"><code>  # By default R fills down a column, but you can fill across rows too
+  matrx.row &lt;- matrix(1:20, nrow = 5, ncol = 4, byrow = TRUE)
+  matrx.row</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    2    3    4
+## [2,]    5    6    7    8
+## [3,]    9   10   11   12
+## [4,]   13   14   15   16
+## [5,]   17   18   19   20</code></pre>
+<pre class="r"><code>  # You can also incompletely fill a matrix. R will just repeat the series until the 
+  # matrix is full.
+  matrx.incomplete &lt;- matrix(1:10, nrow = 5, ncol = 4)
+  matrx.incomplete</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    6    1    6
+## [2,]    2    7    2    7
+## [3,]    3    8    3    8
+## [4,]    4    9    4    9
+## [5,]    5   10    5   10</code></pre>
+<p>Accessing parts of matrices follows is pretty easy.</p>
+<pre class="r"><code>  matrx.1[,4]  # Gets the fourth column</code></pre>
+<pre><code>## [1] 16 17 18 19 20</code></pre>
+<pre class="r"><code>  matrx.1[3,]  # Gets the third row</code></pre>
+<pre><code>## [1]  3  8 13 18</code></pre>
+<pre class="r"><code>  matrx.1[3,4] # Gets the entry in the fourth column and third row</code></pre>
+<pre><code>## [1] 18</code></pre>
+<pre class="r"><code>  matrx.1[2:4, 1:3] # Rows 2 through 4 and columns 1 through 3</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    2    7   12
+## [2,]    3    8   13
+## [3,]    4    9   14</code></pre>
+<p>You can do Arrays too. They function pretty much like multidimensional matrices.</p>
+</div>
+<div id="lists" class="section level3">
+<h3>Lists</h3>
+<p>You might feel like a vector is to restrictive. Your right! So R has lists as well. They are an ordered collection of objects. The object can be pretty much any other data type, and they don’t all have to be the same.</p>
+<pre class="r"><code>  # This is how we make a list. Notice were mixing in a string, vector, matrix 
+  # and float, and also referencing other variables.
+  my.list &lt;- list(char = &quot;foo&quot;, vect = vect.1, matrx = matrx.1, flt = 1.1)
+  my.list</code></pre>
+<pre><code>## $char
+## [1] &quot;foo&quot;
+## 
+## $vect
+## [1] 1 2 3 4
+## 
+## $matrx
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    6   11   16
+## [2,]    2    7   12   17
+## [3,]    3    8   13   18
+## [4,]    4    9   14   19
+## [5,]    5   10   15   20
+## 
+## $flt
+## [1] 1.1</code></pre>
+<pre class="r"><code>  my.list[[2]] # Accessing a list item by the index</code></pre>
+<pre><code>## [1] 1 2 3 4</code></pre>
+<pre class="r"><code>  my.list[[&quot;char&quot;]] # accessing a list item by name</code></pre>
+<pre><code>## [1] &quot;foo&quot;</code></pre>
+</div>
+<div id="data-frames" class="section level3">
+<h3>Data Frames</h3>
+<p>This is perhaps the most confusing part of R. Its sort of like a matrix, but the colums can be different datatypes. It is usually what you will use if you are reading in tabular data from CSV files or querying a database. Its similar to datasets in other statistical languages. I think of Data Frames as a list of vectors, but all the vectors need to be the same length.</p>
+<pre class="r"><code>  var1 &lt;- c(&quot;one&quot;, &quot;two&quot;, &quot;foo&quot;, &quot;man&quot;, &quot;choo&quot;)
+  var2 &lt;- 1:5
+  var3 &lt;- c(TRUE, FALSE, TRUE, FALSE, TRUE)
+  var4 &lt;- c(&quot;red&quot;, &quot;blue&quot;, &quot;orange&quot;, &quot;blue&quot;, &quot;red&quot;)
+  var5 &lt;- c(1,2,3,4,5)
+  
+  my.data = data.frame(var1, var2, var3, var4, var5)
+  
+  names(my.data) &lt;- c(&quot;ID&quot;, &quot;count&quot;, &quot;result&quot;, &quot;color&quot;, &quot;number&quot;) # rename the columns</code></pre>
+<p>You can access parts of your data similar to lists.</p>
+<pre class="r"><code>  my.data[3:5]  # gets columns 3-5</code></pre>
+<pre><code>##   result  color number
+## 1   TRUE    red      1
+## 2  FALSE   blue      2
+## 3   TRUE orange      3
+## 4  FALSE   blue      4
+## 5   TRUE    red      5</code></pre>
+<pre class="r"><code>  my.data[c(1,3)] # gets columns 1 and 3</code></pre>
+<pre><code>##     ID result
+## 1  one   TRUE
+## 2  two  FALSE
+## 3  foo   TRUE
+## 4  man  FALSE
+## 5 choo   TRUE</code></pre>
+<pre class="r"><code>  my.data[c(&quot;ID&quot;, &quot;color&quot;)]  # gets columns by name</code></pre>
+<pre><code>##     ID  color
+## 1  one    red
+## 2  two   blue
+## 3  foo orange
+## 4  man   blue
+## 5 choo    red</code></pre>
+<pre class="r"><code>  my.data$result  # gets variable by name</code></pre>
+<pre><code>## [1]  TRUE FALSE  TRUE FALSE  TRUE</code></pre>
+</div>
+<div id="factors" class="section level3">
+<h3>Factors</h3>
+<p>Sometimes you want to tell R that a variable is <strong>categorical</strong>. R calls these factors.</p>
+<pre class="r"><code>  ## Make some count data
+  flower.color &lt;- c(rep(&quot;red&quot;, 20), rep(&quot;blue&quot;, 28), rep(&quot;purple&quot;, 18))
+  flower.color</code></pre>
+<pre><code>##  [1] &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;   
+##  [8] &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;   
+## [15] &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;red&quot;    &quot;blue&quot;  
+## [22] &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;  
+## [29] &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;  
+## [36] &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;  
+## [43] &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;blue&quot;   &quot;purple&quot;
+## [50] &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot;
+## [57] &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot; &quot;purple&quot;
+## [64] &quot;purple&quot; &quot;purple&quot; &quot;purple&quot;</code></pre>
+<pre class="r"><code>  summary(flower.color)  # Summary won't work so well </code></pre>
+<pre><code>##    Length     Class      Mode 
+##        66 character character</code></pre>
+<pre class="r"><code>  # Define the colors as factors
+  flower.color &lt;- factor(flower.color)
+  flower.color</code></pre>
+<pre><code>##  [1] red    red    red    red    red    red    red    red    red    red   
+## [11] red    red    red    red    red    red    red    red    red    red   
+## [21] blue   blue   blue   blue   blue   blue   blue   blue   blue   blue  
+## [31] blue   blue   blue   blue   blue   blue   blue   blue   blue   blue  
+## [41] blue   blue   blue   blue   blue   blue   blue   blue   purple purple
+## [51] purple purple purple purple purple purple purple purple purple purple
+## [61] purple purple purple purple purple purple
+## Levels: blue purple red</code></pre>
+<pre class="r"><code>  summary(flower.color)  # Now Summary works</code></pre>
+<pre><code>##   blue purple    red 
+##     28     18     20</code></pre>
 </div>
 </div>
 
