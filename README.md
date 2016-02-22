@@ -27,6 +27,9 @@ The contents are primary samples and other materials to be used in the workshop.
   * Make **_Default_** Documents
   
   * Explanation
+    * Code Chunks
+    * Chunk Labels
+    * Chunk options
 
 **10:00 - 10:15** Break
 
@@ -37,6 +40,8 @@ The contents are primary samples and other materials to be used in the workshop.
   * Figures
   
   * Tables
+  
+  * CSS
 
 **11:00 - 11:30** Presentations with Knitr
 
@@ -45,8 +50,6 @@ The contents are primary samples and other materials to be used in the workshop.
   * Different Slide Modules
   
   * Layouts
-  
-  * CSS
 	
 **11:30 - 12:00** Play Time / OverRun 
 
