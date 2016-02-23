@@ -2,7 +2,7 @@
 title: "Our First Documents"
 author: "Robert Olendorf"
 date: "February 18, 2016"
-output: html_document
+output: pdf_document
 ---
 
 R Studio makes getting started with Knitr easy. Lets start a  new project and call it **_cars_**. In the **[File]** menu choose **[New Project]**, **[New Directory]**, **[Empty Project]** and call it **_cars_**. Go ahead and make it a git repository too.

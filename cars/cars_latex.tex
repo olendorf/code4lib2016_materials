@@ -48,7 +48,26 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+
+\title{Our First Document}
+\date{2016-03-07}
+\author{Robert Olendorf}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-  This is some text.
+  \maketitle
+  \newpage
+  
+  LaTeX in Knitr works pretty much the same way as in Markdown. LaTeX gives you much more control over the layout and is prefered for preparing manuscripts. There are a dizzying number or packages available and, unfortunately, it can be a little tricky. We'll just introduce it here and leave it to you to explore LaTeX further if you wish. 
+  
+  To continue with our Cars example lets do similar things here. In the data set there are a total of 50 records.
+  
+  We got used an inline code chunk to dynamically generate the number of cars like this.
+  
+  \begin{verbatim}
+  To continue with our Cars example lets do similar things here. 
+  In the data set there are a total of "\"Sexpr{length(cars$dist)}
+  records.
+  \end{verbatim}
+  
+  
 \end{document}

@@ -1,0 +1,27 @@
+---
+title: "Presentation Notes"
+author: "Robert Olendorf"
+date: "February 23, 2016"
+output: html_document
+---
+
+## Getting Started
+
+### Install Necessary Packages.
+
+There are a number of options for creating presentations. We will use the **_Slidify_** package, mostly because it has the nicest set of themes. You can get more documentation at [slidify.org](http://slidify.org/).
+
+In the **_Packages_** tab at the lower left, install and require the **_devtools_** package. This will allow us to install the most current **_Slidify_** from Github. 
+
+```
+  > install_github('ramnathv/slidify')
+  > install_github('ramnathv/slidifyLibraries')
+```
+### Author The Slide Deck
+
+**_Slidify_** uses the command line to start initialize the slide deck.
+
+```
+  > author("new_slides")
+```
+  
