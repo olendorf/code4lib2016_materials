@@ -53,7 +53,7 @@ The contents are primary samples and other materials to be used in the workshop.
 	
 **11:30 - 12:00** Play Time / OverRun 
 
-**12:00 - 13:00** Lunch
+**12:00 - 13:30** Lunch
 
 **13:00 - 14:00** Introduction to Shiny
 
@@ -63,23 +63,27 @@ The contents are primary samples and other materials to be used in the workshop.
   
   * Hello World Application
   
-  * Adding An Ineractive Figure
+  * Adding A Figure
 
 **14:00 - 15:00** Exploring Shiny
 
   * Input Widgets
   
-  * Formatting
+  * Reactive functions
+  
+  * Formatting/Layouts
   
   * CSS
+  
 
 **15:00 - 15:15** Break
 
 **15:15 - 16:00** More Shiny
+  * Shiny Presentations
 
   * Publishing to Shiny Apps
   
   * Additional Topics
 
-**16:00 - 17:00** Play Time/Advanced Topics
+**16:00 - 16:30** Play Time/Advanced Topics
 
